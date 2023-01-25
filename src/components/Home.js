@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Home = () => {
 
@@ -15,6 +15,14 @@ const Home = () => {
         setCount( lastCount => count + 1) // increase the count
     }
 
+
+    useEffect(() => {   
+        console.log('useEffect worked');
+
+        return (() => {  
+            console.log('refresh');
+        })
+    }, [count])
 
 
 
